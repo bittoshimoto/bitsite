@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bittoshimoto">
+    <meta name="description" content="Welcome to the official page of Bittoshimoto, a cryptocurrency enthusiast and developer.">
+    <meta name="keywords" content="Bittoshimoto, cryptocurrency, BitCore, blockchain, developer">
+    <title>Bittoshimoto - GitHub Page</title>
+
+    <!-- Link to external stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="showSection('bit')">Bit</button>
+            <button class="nav-btn" onclick="showSection('about')">About</button>
+            <button class="nav-btn" onclick="showSection('specs')">Specs</button>
+            <button class="nav-btn" onclick="showSection('links')">Links</button>
+        </div>
+    </header>
+
+    <div class="content">
+        <section id="bit" class="section">
+            <img src="logos/bit.png" alt="Bit Logo" class="logo">
+            <h2>Welcome to Bit</h2>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About Bit</h2>
+            <p><strong>Bit</strong> is a decentralized cryptocurrency based on the Bitcoin protocol. Launched with the vision of offering a secure, fast, and scalable digital currency, Bit aims to provide a transparent and community-driven alternative to traditional financial systems. It uses the proven <strong>SHA-256 Proof of Work</strong> algorithm for consensus, ensuring both security and fairness for miners and users alike.</p>
+
+            <p>The <strong>genesis block</strong> of Bit was mined on <strong>December 16, 2024</strong>, marking the beginning of a new era for the Bit blockchain. With its <strong>limited supply</strong> of 2.1 million coins and a <strong>block reward</strong> of 5 BIT, Bit is designed to provide scarcity, ensuring long-term value and stability. Through continuous development and community involvement, Bit aims to be a versatile cryptocurrency for various use cases.</p>
+
+            <p>The Bit blockchain follows a strict emission schedule, with block halvings occurring every 210,000 blocks, ensuring controlled inflation and predictable supply over time.</p>
+
+            <p><strong>Genesis Message:</strong> "Bitcoin smashes 100,000 USD"</p>
+        </section>
+
+        <section id="specs" class="section">
+            <h2>Specifications</h2>
+            <table class="specs-table">
+                <tr>
+                    <td>Algorithm:</td>
+                    <td>SHA-256 Proof of Work</td>
+                </tr>
+                <tr>
+                    <td>Ticker:</td>
+                    <td>BIT</td>
+                </tr>
+                <tr>
+                    <td>RPC port:</td>
+                    <td>20971</td>
+                </tr>
+                <tr>
+                    <td>P2P port:</td>
+                    <td>20972</td>
+                </tr>
+                <tr>
+                    <td>Block reward:</td>
+                    <td>5 BIT</td>
+                </tr>
+                <tr>
+                    <td>Block halving:</td>
+                    <td>210000 blocks</td>
+                </tr>
+                <tr>
+                    <td>Coin supply:</td>
+                    <td>2100000 BIT</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="links" class="section">
+            <img src="logos/bit2.png" alt="Bit2 Logo" class="logo2">
+            <h2>Follow the bit</h2>
+            <a href="https://github.com/bittoshimoto" target="_blank"><img src="logos/git.png" alt="GitHub" class="social-logo"></a>
+            <a href="https://discord.gg/WCPWCnkd46" target="_blank"><img src="logos/discord.png" alt="Discord" class="social-logo"></a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bittoshimoto. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            // Show the selected section
+            var selectedSection = document.getElementById(sectionId);
+            selectedSection.style.display = 'block';
+        }
+
+        // Set default view to the "bit" section
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('bit');
+        });
+    </script>
+
+</body>
+
+</html>
