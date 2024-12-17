@@ -3,13 +3,13 @@ body {
     font-family: 'Roboto Mono', monospace;
     margin: 0;
     padding: 0;
-    background-color: #D3D3D3;
+    background-color: #ffffff;
     color: #000;
 }
 
 /* Header styles */
 header {
-    background-color: #D3D3D3;
+    background-color: #ffffff;
     padding: 15px;
     text-align: center;
 }
