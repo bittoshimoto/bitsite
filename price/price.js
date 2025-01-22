@@ -1,6 +1,6 @@
 async function fetchB1TPrice() {
   const apiKey = '00f4b8f0-3c55-4c16-8d0f-0c7ab8d6de19';
-  const apiUrl = 'https://www.livecoinwatch.com/api/v1/coins/single';
+  const apiUrl = 'https://api.livecoinwatch.com/coins/single';
 
   try {
     const response = await fetch(apiUrl, {
