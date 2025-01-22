@@ -9,7 +9,7 @@ async function fetchB1TPrice() {
         'Content-Type': 'application/json',
         'x-api-key': apiKey,
       },
-      body: JSON.stringify({ code: 'b1t', currency: 'usd', meta: true }) // meta set to true
+      body: JSON.stringify({ code: 'B1T', currency: 'USD', meta: true }) // meta set to true
     });
 
     if (response.ok) {
