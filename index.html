@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="bitpage.css" media="screen">
 <link rel="stylesheet" href="index.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="bitpage.js" defer=""></script>    
+    <script class="u-script" type="text/javascript" src="bitpage.js" defer=""></script>
+    
     
     
     
@@ -132,44 +133,42 @@ borders: top right bottom left !important; border-color: #f7931a !important; bor
           </div>
         </div>
         <div class="u-clearfix u-custom-html u-hidden-md u-hidden-sm u-hidden-xs u-custom-html-1">
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title></title>
-          <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&amp;display=swap" rel="stylesheet">
-          <style> body {
-      font-family: 'Ubuntu', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9; /* Light background for contrast */
-    }
-    #price-container {
-      position: fixed;
-      bottom: 20px;
-      left: 20px; /* Changed from 'right' to 'left' */
-      border: 2px solid #f7931a;
-      padding: 10px 20px;
-      display: inline-block;
-      border-radius: 10px;
-      background-color: #fff;
-      color: #f7931a; /* Font color matches the border */
-      font-size: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-    #price-container h1 {
-      margin: 0;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    #price-container p {
-      margin: 5px 0 0;
-      font-size: 16px;
-    } </style><!-- Price Display Container -->
+          <style>
+            body {
+              font-family: 'Ubuntu', sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #f9f9f9; /* Light background for contrast */
+            }
+            #price-container {
+              position: fixed;
+              bottom: 20px;
+              left: 20px; /* Positioned on the left */
+              border: 2px solid #f7931a;
+              padding: 10px 20px;
+              display: inline-block;
+              border-radius: 10px;
+              background-color: #fff;
+              color: #f7931a; /* Font color matches the border */
+              font-size: 16px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              text-align: center;
+            }
+            #price-container h1 {
+              margin: 0;
+              font-size: 18px;
+              font-weight: bold;
+            }
+            #price-container p {
+              margin: 5px 0 0;
+              font-size: 16px;
+            }
+          </style>
           <div id="price-container">
             <h1>B1T Current Price</h1>
-            <p>Price: <span id="price">Loading...</span> USD
-            </p>
+            <p>Price: <span id="price">Loading...</span> USD</p>
           </div>
+          <script src="price/price.js"></script> <!-- Replace with the actual path -->
         </div>
       </div>
     </section>
