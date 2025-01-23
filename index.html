@@ -133,42 +133,49 @@ borders: top right bottom left !important; border-color: #f7931a !important; bor
           </div>
         </div>
         <div class="u-clearfix u-custom-html u-hidden-md u-hidden-sm u-hidden-xs u-custom-html-1">
-          <style>
-            body {
-              font-family: 'Ubuntu', sans-serif;
-              margin: 0;
-              padding: 0;
-              background-color: #f9f9f9; /* Light background for contrast */
-            }
-            #price-container {
-              position: fixed;
-              bottom: 20px;
-              left: 20px; /* Positioned on the left */	    
-	      z-index: 1000;
-              border: 2px solid #f7931a;
-              padding: 10px 20px;
-              display: inline-block;
-              border-radius: 10px;
-              background-color: #000;
-              color: #f7931a; /* Font color matches the border */
-              font-size: 16px;
-              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-              text-align: center;
-            }
-            #price-container h1 {
-              margin: 0;
-              font-size: 18px;
-              font-weight: bold;
-            }
-            #price-container p {
-              margin: 5px 0 0;
-              font-size: 16px;
-            }
-          </style>
-          <div id="price-container">
-            <h1>B1T Current Price</h1>
-            <p>Price: <span id="price">Loading...</span> USD</p>
-          </div>
+        <style>
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light background for contrast */
+  }
+  #price-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* Positioned on the left */
+    z-index: 1000;
+    border: 2px solid #f7931a;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #000; /* Black background */
+    color: #f7931a; /* Font color matches the border */
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer; /* Pointer cursor for clickable element */
+    text-decoration: none; /* Removes underline from the link */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+  }
+  #price-container h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  #price-container p {
+    margin: 5px 0 0;
+    font-size: 16px;
+  }
+  #price-container:hover {
+    background-color: #fff; /* Changes background to white on hover */
+    color: #000; /* Changes text color to black on hover */
+  }
+</style>
+          <a id="price-container" href="https://www.livecoinwatch.com/price/Bit-B1T" target="_blank" rel="noopener noreferrer">
+  <h1>B1T Current Price</h1>
+  <p>Price: <span id="price">Loading...</span> USD</p>
+</a>
           <script src="price/price.js"></script> <!-- Replace with the actual path -->
         </div>
       </div>
