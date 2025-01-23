@@ -141,9 +141,10 @@ borders: top right bottom left !important; border-color: #f7931a !important; bor
               background-color: #f9f9f9; /* Light background for contrast */
             }
             #price-container {
-              position: sticky;
+              position: fixed;
               bottom: 20px;
-              left: 20px; /* Positioned on the left */
+              left: 20px; /* Positioned on the left */	    
+	      z-index: 1000;
               border: 2px solid #f7931a;
               padding: 10px 20px;
               display: inline-block;
