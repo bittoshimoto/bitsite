@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FollowTheBit.org – #FollowTheBit</title>
+  <meta name="description" content="FollowTheBit - A faster and more scalable alternative to Bitcoin with 1-minute block times and sustainable mining." />
+  <meta name="keywords" content="FollowTheBit, B1T, Cryptocurrency, Bitcoin Alternative, SCRYPT, Mining" />
+  <meta property="og:title" content="FollowTheBit - #FollowTheBit" />
+  <meta property="og:description" content="A faster and more scalable alternative to Bitcoin" />
+  <meta property="og:url" content="https://followthebit.org" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="bit-logo.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    html,body {width:100%;height:100%;margin:0;padding:0;box-sizing:border-box;}
+    *, *::before, *::after {box-sizing: border-box;}
+    body {
+      background:#040404; color:#fff; margin:0; font-family:'Ubuntu', 'Montserrat', Arial, sans-serif; min-height:100vh; overflow-x:hidden;position:relative;
+    }
+    #matrix-bg { position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;}
+    .content { position:relative;z-index:1; display:flex;flex-direction:column; align-items:center; justify-content:center; min-height:100vh; padding: 250px 20px 40px; }
+    .logo-anim {
+      margin-top:60px;
+      height:300px;
+      width:300px;
+      position:relative;
+    }
+    .logo-anim img#rabbitLogo {
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      box-shadow:0 0 44px #FFA50080;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      /* Morphing optimization: subtle scale and smooth border radius */
+      border-radius: 50% / 55%;
+      transform-origin: center center;
+    }
+    .logo-anim img#rabbitLogo:hover {
+      transform: scale(1.05);
+      border-radius: 48% / 52%;
+      box-shadow: 0 0 60px #FFA500cc;
+    }
+    .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 140px; /* match nav height */
+  padding-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+    .main-headline {
+      margin-top:32px;
+      font-size: 3.8em;
+      font-family: 'Montserrat', 'Ubuntu', Arial, sans-serif;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 0.01em;
+      color: #FF9500;
+      text-shadow: 0 2px 14px #000, 0 2px 16px #FFA50044;
+      transition: all .7s;
+      min-height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .main-headline .bit {
+      color: #FFA500;
+      filter: drop-shadow(0 0 5px #FFA50088);
+    }
+    .main-headline .white-text {
+      color: #FFFFFF;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    }
+    
+
+    .slogan-anim { 
+      font-size: 2.5rem; 
+      margin: 24px 0 12px 0; 
+      font-weight: 700; 
+      letter-spacing: 1px;
+      height: 60px; /* Feste Höhe um Springen zu vermeiden */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .slogan-anim span {
+      transition: color 0.6s;
+      position: relative;
+    }
+    .slogan-anim span::after {
+      content: "|";
+      position: absolute;
+      right: -8px;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .switch-color {color:#FFA500;}
+    .desc-movement { font-size:1.05rem; color:#eaa75a; margin-bottom:34px;}
+    .main-btns { margin-bottom:42px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .main-btns a {background:#FFA500; display:inline-block; color:#222; text-decoration:none; font-weight:700; border-radius:6px; padding:12px 24px; transition:all 220ms; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    .main-btns a:hover {background:#eaa75a; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.25);}
+    .section { max-width:1000px; width: 100%; margin:40px auto; background:rgba(0,0,0,0.62); border:2px solid #eaa75a; border-radius:16px; padding:32px 24px; box-shadow:0 5px 32px -12px #0e0d49aa; 
+  scroll-margin-top: 120px;
+}
+    h2 {color:#FFA500; margin:18px 0 16px; font-size: 2.2rem; text-align: center;}
+    .specs-table {width:100%; color:#fff; border-collapse: collapse; margin:24px 0;}
+    .specs-table th, .specs-table td { border:1px solid #eaa75a;padding:10px 12px; text-align: center; }
+    .specs-table th { background: rgba(255, 165, 0, 0.1); }
+    .features-box {max-width:1000px; width: 100%; margin:40px auto;border:2px solid #eaa75a;border-radius:16px;padding:24px 20px;display:flex;flex-direction:row;justify-content:space-between;gap:24px; background:rgba(30,20,0,0.2); box-shadow:0 5px 32px -12px #0e0d49aa; }
+    .features-box .feature-item { flex: 1; }
+    .features-box .num {width:44px;height:44px;background:#FFA500;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#222; font-size:1.4rem; margin-right:16px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);}
+    .footer {text-align:center; font-size:0.97rem; color:#eaa75a; margin:48px 0 9px;}
+    
+    /* Improved link buttons */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .link-section {
+      margin-bottom: 30px;
+    }
+    .link-section h3 {
+      color: #FFA500;
+      margin: 0 0 15px 0;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+    .link-button {
+      display: block;
+      background: rgba(30, 20, 0, 0.4);
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid #eaa75a;
+      color: #FFA500;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 10px;
+      transition: all 0.3s;
+    }
+    .link-button:hover {
+      background: rgba(255, 165, 0, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Top navigation bar with Explorer highlight */
+    .topnav {
+      position: fixed;
+      top: 0; left: 0; width: 100vw;
+      z-index: 99;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    }
+    .topnav-inner {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 15px;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+    }
+    .topnav-link {
+      background: #FFA500;
+      color: #222;
+      font-family: 'Ubuntu', 'Montserrat', Arial, sans-serif;
+      font-size: 1.09rem;
+      border: none;
+      border-radius: 17px;
+      outline: none;
+      padding: 8px 22px 8px 22px;
+      margin: 0 2px;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: .03em;
+      transition: all 0.22s;
+      text-decoration: none;
+      box-shadow: 0 0 6px #0e0d4940;
+    }
+    .topnav-link:hover, .topnav-link.active { background: #eaa75a; color: #111; transform: translateY(-2px); }
+    
+    .explorer-button {
+      background: linear-gradient(45deg, #FF8C00, #FFA500);
+      color: #111;
+      font-family: 'Ubuntu', 'Montserrat', Arial, sans-serif;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 25px;
+      outline: none;
+      padding: 10px 25px;
+      margin: 0 8px;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: .03em;
+      transition: all 0.3s;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .explorer-button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 165, 0, 0.5);
+    }
+    .explorer-button::before {
+      content: "🔍";
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
+    
+    /* Price Display Styles */
+    .price-display {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: linear-gradient(45deg, #111, #222);
+      border: 1px solid #FFA500;
+      border-radius: 12px;
+      padding: 8px 15px;
+      color: #FFA500;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+      z-index: 100;
+    }
+    
+    .price-display::before {
+      content: "B1T";
+      margin-right: 10px;
+      font-weight: 900;
+    }
+    
+    .price-value {
+      color: white;
+    }
+    
+    @media(max-width: 768px) {
+      .price-display {
+        position: static;
+        margin: 10px auto 0;
+        width: max-content;
+      }
+    }
+    
+    #scrollToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: #FFA500;
+      color: #222;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      z-index: 100;
+    }
+    #scrollToTop.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    #scrollToTop:hover {
+      background: #eaa75a;
+      transform: translateY(-3px);
+    }
+    
+    @media(max-width:900px){
+      .features-box{flex-direction:column;gap:20px}
+      .features-box .feature-item { display:flex; align-items:center; }
+    }
+    
+    @media(max-width:700px){
+      .section{padding:20px 15px}
+      .logo-anim{height:180px;width:180px;margin-top:60px;}
+      .main-headline{font-size:3.2em;}
+      .topnav-link{padding:6px 14px;font-size:1em;border-radius:12px;}
+      h2 {font-size: 1.8rem;}
+      .explorer-button {font-size: 1.1rem; padding: 8px 18px;}
+    }
+    
+    @media(max-width:480px){
+      .logo-anim{height:140px;width:140px;}
+      .main-headline{font-size:2.3em;}
+      .main-btns a {padding: 10px 16px; font-size: 0.9em;}
+      .topnav-inner {gap: 8px;}
+      .topnav-link{padding:6px 10px;font-size:0.9em;}
+      .explorer-button {font-size: 1rem; padding: 7px 15px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="topnav">
+    <nav class="topnav-inner">
+      <a href="#home" class="topnav-link active">Home</a>
+      <a href="#about" class="topnav-link">About</a>
+      <a href="#links" class="topnav-link">Links</a>
+      <a href="#services" class="topnav-link">Services</a>
+      <a href="#contact" class="topnav-link">Contact</a>
+      <a href="#faq" class="topnav-link">FAQ</a>
+      <a href="https://b1texplorer.com" target="_blank" class="explorer-button">Explorer</a>
+    </nav>
+  </div>
+  
+  <div class="price-display">
+    <span class="price-value" id="currentPrice">$0.00</span>
+  </div>
+  
+  <canvas id="matrix-bg"></canvas>
+<section id="home" class="hero">
+<div class="logo-anim" id="logoAnimPlaceholder">
+      <img id="rabbitLogo" src="rabbit-logo.png" alt="Rabbit Logo" />
+    </div>
+    <div class="main-headline" id="headlineBit">#FollowThe<span class="white-text">WhiteRabbit</span></div>
+    <div class="main-btns">
+      <a href="files/Bit.pdf" target="_blank">Whitepaper</a>
+    </div>
+</section>
+  <div class="content">
+    
+
+    <div class="section" id="about">
+      <h2>About Bit</h2>
+      <div>Bit is a decentralized cryptocurrency built on the foundations of transparency, scarcity, and individual empowerment. Relaunched with a focus on community-first principles, Bit is powered by the proven and efficient Scrypt AuxPoW consensus mechanism — enabling secure mining while supporting merge-mining compatibility. But Bit is more than just a blockchain. It’s a symbol — a shift in mindset. To Follow the Bit means to follow the white rabbit — and step outside predefined systems, inherited trust, and artificial limits. It’s a path chosen by those who question legacy structures and opt into something freer, simpler, and driven by truth rather than trend. Bit isn’t here to replicate the old world — it’s here to rewrite the rules entirely. One block at a time.</div>
+      <div style="margin-top:16px;font-size:1.1rem;color:#eaa75a;max-width:640px;margin-left:auto;margin-right:auto;text-align:center;font-style:italic;">"FollowTheBit"</div>
+      <div style="margin-top:16px;text-align:center;">Coin supply: <b>2,116,182 B1T</b>, initial block reward: <b>5 B1T</b>, block halving: every <b>210,000</b> blocks, block time: <b>1 minute</b>.</div>
+    </div>
+
+    <div class="section">
+      <h2>Why B1T?</h2>
+      <div>B1T is a faster and more scalable alternative to Bitcoin. With 1-minute block times, more frequent rewards and sustainable mining incentives.</div>
+      <table class="specs-table">
+        <tr><th>Feature</th><th>Bitcoin (BTC)</th><th>Bit (B1T)</th></tr>
+        <tr><td>Block Time</td><td>10 minutes</td><td>1 minute</td></tr>
+        <tr><td>Blocks per 10 Minutes</td><td>1</td><td>10</td></tr>
+        <tr><td>Transaction Fees per Block</td><td>Same, but fewer blocks</td><td>Same, 10x more frequent</td></tr>
+        <tr><td>Fees per 10 Minutes</td><td>1 block</td><td>10 blocks</td></tr>
+        <tr><td>Mining Incentive Post-Reward</td><td>Lower payouts</td><td>More frequent payouts</td></tr>
+        <tr><td>Impact on Hashrate</td><td>May drop</td><td>Likely stable or grow</td></tr>
+        <tr><td>Network Stability</td><td>Lower if hashrate drops</td><td>Higher, faster confirmations</td></tr>
+      </table>
+    </div>
+
+    <div class="features-box">
+      <div class="feature-item" style="display:flex;align-items:center;"><div class="num">1</div>For Newcomers: A straightforward entry into blockchain and cryptocurrency.</div>
+      <div class="feature-item" style="display:flex;align-items:center;"><div class="num">2</div>For Latecomers: A chance to participate in a unique, limited-supply project.</div>
+      <div class="feature-item" style="display:flex;align-items:center;"><div class="num">3</div>For Miners: An opportunity to use your SCRYPT ASICs and support a fast-growing network!</div>
+    </div>
+
+    <div class="section" id="links">
+      <h2>Links</h2>
+      
+      <div class="link-section">
+        <h3>Exchanges</h3>
+        <div class="links-grid">
+          <a href="https://safetrade.com/exchange/B1T-USDT?type=basic" target="_blank" class="link-button">SafeTrade</a>
+          <a href="https://xeggex.com/market/B1T_USDT" target="_blank" class="link-button">XeggeX</a>
+          <a href="https://app.exbitron.com/exchange/?market=B1T-USDT" target="_blank" class="link-button">Exbitron</a>
+        </div>
+      </div>
+      
+      <div class="link-section">
+        <h3>Explorers</h3>
+        <div class="links-grid">
+          <a href="https://b1texplorer.com" target="_blank" class="link-button">b1texplorer.com</a>
+        </div>
+      </div>
+      
+      <div class="link-section">
+        <h3>Development</h3>
+        <div class="links-grid">
+          <a href="https://github.com/bittoshimoto/Bit" target="_blank" class="link-button">GitHub</a>
+        </div>
+      </div>
+      
+      <div class="link-section">
+        <h3>Others</h3>
+        <div class="links-grid">
+          <a href="https://www.livecoinwatch.com/price/Bit-B1T" target="_blank" class="link-button">Live Coin Watch</a>
+          <a href="https://coinpaprika.com/coin/b1t-bit/" target="_blank" class="link-button">Coin Paprika</a>
+          <a href="https://blockspot.io/coin/bit-2/" target="_blank" class="link-button">Blockspot</a>
+          <a href="https://miningpoolstats.stream/bit" target="_blank" class="link-button">Mining Pool Stats</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="services">
+      <h2>Services</h2>
+      <div style="text-align:center;margin-bottom:24px;">Bit offers various services for the community.</div>
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:24px;margin-top:30px;">
+        <div style="background:rgba(30,20,0,0.2);border-radius:12px;padding:20px;border:1px solid #eaa75a;text-align:center;">
+          <div style="font-size:3rem;margin-bottom:15px;">💼</div>
+          <h3 style="color:#FFA500;margin:0 0 10px;">Wallet</h3>
+          <p style="margin:0;">Secure your B1T in our official wallet with advanced security features.</p>
+        </div>
+        
+        <div style="background:rgba(30,20,0,0.2);border-radius:12px;padding:20px;border:1px solid #eaa75a;text-align:center;">
+          <div style="font-size:3rem;margin-bottom:15px;">⛏️</div>
+          <h3 style="color:#FFA500;margin:0 0 10px;">Mining</h3>
+          <p style="margin:0;">Participate in the mining network to validate blocks and earn B1T rewards.</p>
+        </div>
+        
+        <div style="background:rgba(30,20,0,0.2);border-radius:12px;padding:20px;border:1px solid #eaa75a;text-align:center;">
+          <div style="font-size:3rem;margin-bottom:15px;">💹</div>
+          <h3 style="color:#FFA500;margin:0 0 10px;">Exchanges</h3>
+          <p style="margin:0;">Trade B1T on our partner exchanges with various trading pairs.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section" id="contact">
+      <h2>Contact</h2>
+      <div style="text-align:center;margin-bottom:30px;">You can reach us through the following channels:</div>
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:20px;margin:0 auto;max-width:600px;">
+        <a href="mailto:bitcoremototoshi@proton.me" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;color:#fff;background:rgba(30,20,0,0.2);border-radius:12px;padding:16px;border:1px solid #eaa75a;transition:all 0.3s;">
+          <div style="font-size:2.5rem;margin-bottom:10px;">📧</div>
+          <h3 style="color:#FFA500;margin:0 0 8px;">Email</h3>
+          <p style="margin:0;text-align:center;">bitcoremototoshi@proton.me</p>
+        </a>
+        
+        <a href="https://github.com/bittoshimoto/Bit" target="_blank" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;color:#fff;background:rgba(30,20,0,0.2);border-radius:12px;padding:16px;border:1px solid #eaa75a;transition:all 0.3s;">
+          <div style="font-size:2.5rem;margin-bottom:10px;">💻</div>
+          <h3 style="color:#FFA500;margin:0 0 8px;">GitHub</h3>
+          <p style="margin:0;text-align:center;">bittoshimoto/Bit</p>
+        </a>
+      </div>
+    </div>
+    
+    <div class="section" id="faq">
+      <h2>FAQ</h2>
+      
+      <div style="margin-top:30px;">
+        <div style="border:1px solid #eaa75a;border-radius:8px;margin-bottom:15px;overflow:hidden;">
+          <div style="background:rgba(255,165,0,0.1);padding:15px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;" class="faq-q">
+            <span>What is Bit (B1T)?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div style="padding:0 15px;max-height:0;overflow:hidden;transition:all 0.3s ease;" class="faq-a">
+            <p>Bit (B1T) is a decentralized cryptocurrency based on the Bitcoin protocol. It uses the SCRYPT Proof of Work algorithm and offers faster block times (1 minute) compared to Bitcoin (10 minutes).</p>
+          </div>
+        </div>
+        
+        <div style="border:1px solid #eaa75a;border-radius:8px;margin-bottom:15px;overflow:hidden;">
+          <div style="background:rgba(255,165,0,0.1);padding:15px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;" class="faq-q">
+            <span>How can I start mining B1T?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div style="padding:0 15px;max-height:0;overflow:hidden;transition:all 0.3s ease;" class="faq-a">
+            <p>To start mining B1T, you need SCRYPT-capable mining hardware. You can join a mining pool or mine solo if you have sufficient hashpower. Visit our GitHub page for guides on setting up a node and mining client.</p>
+          </div>
+        </div>
+        
+        <div style="border:1px solid #eaa75a;border-radius:8px;margin-bottom:15px;overflow:hidden;">
+          <div style="background:rgba(255,165,0,0.1);padding:15px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;" class="faq-q">
+            <span>Where can I buy or trade B1T?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div style="padding:0 15px;max-height:0;overflow:hidden;transition:all 0.3s ease;" class="faq-a">
+            <p>B1T is available on various cryptocurrency exchanges, including SafeTrade, XeggeX, and Exbitron. For more information, check the "Links" section on our website.</p>
+          </div>
+        </div>
+        
+        <div style="border:1px solid #eaa75a;border-radius:8px;margin-bottom:15px;overflow:hidden;">
+          <div style="background:rgba(255,165,0,0.1);padding:15px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;" class="faq-q">
+            <span>What are the advantages of B1T compared to Bitcoin?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div style="padding:0 15px;max-height:0;overflow:hidden;transition:all 0.3s ease;" class="faq-a">
+            <p>B1T offers several advantages over Bitcoin, including faster transaction confirmations (1 minute vs 10 minutes), more frequent block rewards for miners, and a more sustainable structure after the block reward phase due to more blocks per time unit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Donate Bit for future development:<br />
+      <span style="color:#FFA500;word-break:break-all;">BQEJpqsrKVGdDriCo3msLRwXbBuzf2f6nw</span><br /><br />
+      © 2025 Bit. All rights reserved.
+    </div>
+  </div>
+  
+  <div id="scrollToTop">↑</div>
+  <script src="main.js"></script>
+</body>
+</html>

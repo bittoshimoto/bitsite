@@ -1,0 +1,4 @@
+# Netlify redirects for better SEO and user experience
+/*    /index.html   200
+http://followthebit.org/* https://followthebit.org/:splat 301!
+http://www.followthebit.org/* https://followthebit.org/:splat 301!
