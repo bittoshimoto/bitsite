@@ -47,10 +47,11 @@ window.addEventListener('resize', () => {
   canvas.height = h;
 });
 
+let fetchSuccessful = false;
 // Preisanzeige abrufen
 async function fetchPrice() {
   // Wir versuchen mehrere Methoden, um den Preis zu erhalten
-  let fetchSuccessful = false;
+   fetchSuccessful = false;
 
   try {
     // Methode 1: Direkter Zugriff - kann wegen CORS fehlschlagen
@@ -107,21 +108,6 @@ async function fetchPrice() {
     } catch (proxyError) {
       console.error('Proxy-Preisabfrage fehlgeschlagen:', proxyError);
       // Wir versuchen die letzte Fallback-Methode
-    }
-  }
-
-  // Fallback: Wenn beide Methoden fehlschlagen, zeigen wir einen statischen Wert an
-  if (!fetchSuccessful) {
-    const priceElement = document.getElementById('currentPrice');
-    if (priceElement) {
-      // Aktueller bekannter Preis laut Anfrage (ca. $0.08)
-      priceElement.textContent = '$0.08';
-      
-      // Anzeigen eines kleinen "ca." Hinweises, um zu zeigen, dass dies kein Live-Wert ist
-      priceElement.setAttribute('title', 'Approximativer Wert - Live-Aktualisierung derzeit nicht möglich');
-      
-      // Optional: Subtile visuelle Änderung, um anzuzeigen, dass es kein Live-Wert ist
-      priceElement.style.opacity = '0.8';
     }
   }
 }
