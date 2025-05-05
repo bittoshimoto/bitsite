@@ -217,12 +217,45 @@
       align-items: center;
       justify-content: center;
     }
+
+    .wallet-button {
+      background: linear-gradient(45deg, #FF8C00, #FFA500);
+      color: #111;
+      font-family: 'Ubuntu', 'Montserrat', Arial, sans-serif;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 25px;
+      outline: none;
+      padding: 10px 25px;
+      margin: 0 8px;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: .03em;
+      transition: all 0.3s;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .explorer-button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 165, 0, 0.5);
+    }
+
+    .wallet-button:hover {
       transform: translateY(-3px) scale(1.05);
       box-shadow: 0 6px 20px rgba(255, 165, 0, 0.5);
     }
     .explorer-button::before {
       content: "🔍";
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
+
+    .wallet-button::before {
+      content: "👛";
       margin-right: 8px;
       font-size: 1.2rem;
     }
@@ -304,6 +337,7 @@
       .topnav-link{padding:6px 14px;font-size:1em;border-radius:12px;}
       h2 {font-size: 1.8rem;}
       .explorer-button {font-size: 1.1rem; padding: 8px 18px;}
+      .wallet-button {font-size: 1.1rem; padding: 8px 18px;}
     }
     
     @media(max-width:480px){
@@ -313,6 +347,7 @@
       .topnav-inner {gap: 8px;}
       .topnav-link{padding:6px 10px;font-size:0.9em;}
       .explorer-button {font-size: 1rem; padding: 7px 15px;}
+      .wallet-button {font-size: 1rem; padding: 7px 15px;}
     }
   </style>
 </head>
@@ -327,6 +362,7 @@
       <a href="#faq" class="topnav-link">FAQ</a>
       <a href="https://b1texplorer.com" target="_blank" class="explorer-button">Explorer</a>
       <a href="https://ord.b1texplorer.com" target="_blank" class="explorer-button">Ordinals</a>
+      <a href="https://webwallet.b1tcore.org" target="_blank" class="wallet-button">Wallet</a>
     </nav>
   </div>
   
