@@ -2,123 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" 
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>B1T Whitepaper</title>
+
   <style>
-    /* Whitepaper Styles - Enhanced by a 30-year HTML Developer */
     :root {
       --orange: #f7931a;
-      --dark-bg: #0d0d0d;
-      --section-bg: rgba(255, 255, 255, 0.05);
-      --text-light: #eeeeee;
-      --text-muted: #ffffff;
+      --text-black: #000000;
+      --text-gray: #444444;
+      --max-width: 900px;
     }
 
     body {
       margin: 0;
-      padding: 40px;
-      font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-      background: var(--dark-bg);
-      background-image: radial-gradient(circle at top left, #1a1a1a, var(--dark-bg));
-      color: var(--text-light);
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+      color: var(--text-black);
+      background: #ffffff;
       line-height: 1.6;
     }
 
     header {
       text-align: center;
-      margin-bottom: 60px;
+      padding: 80px 20px 40px;
     }
 
     h1 {
-      font-size: 4rem;
+      font-size: 3.5rem;
       margin: 0;
+      font-weight: 700;
       color: var(--orange);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(247, 147, 26, 0.7);
     }
 
     h2 {
-      font-size: 1.75rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--text-gray);
       margin-top: 10px;
-      color: var(--text-muted);
-      font-style: italic;
     }
 
     main {
-      max-width: 1000px;
+      max-width: var(--max-width);
       margin: 0 auto;
       padding: 20px;
-      backdrop-filter: blur(4px);
     }
 
     section {
-      background-color: var(--section-bg);
-      border-left: 6px solid var(--orange);
-      padding: 20px 30px;
-      margin-bottom: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+      padding: 30px 0;
+      border-bottom: 1px solid #eaeaea;
     }
 
     h3 {
-      font-size: 1.5rem;
-      margin-top: 0;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      font-weight: 600;
       color: var(--orange);
-      position: relative;
-    }
-
-    h3::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 3px;
-      background: var(--orange);
-      margin-top: 6px;
     }
 
     p {
       margin: 1em 0;
+      font-size: 1rem;
+      color: var(--text-gray);
     }
 
     ul {
-      list-style-type: disc;
-      margin: 1em 0 1em 1.5em;
+      padding-left: 20px;
+      margin-top: 10px;
     }
 
     li {
-      margin-bottom: 0.6em;
+      margin: 8px 0;
+      color: var(--text-gray);
     }
 
     strong {
       color: var(--orange);
+      font-weight: 600;
     }
 
     blockquote {
+      margin: 20px 0;
+      padding: 10px 20px;
       border-left: 4px solid var(--orange);
-      margin: 1em 0;
-      padding-left: 16px;
-      color: var(--text-muted);
-    }
-
-    /* Scrollbar Styling */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--dark-bg);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--orange);
-      border-radius: 4px;
+      color: var(--text-gray);
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>B1T</h1>
@@ -126,32 +96,25 @@
   </header>
 
   <main>
-    <section id="about">
+
+    <section>
       <h3>1. About</h3>
-      <p>
-        <strong>Bit</strong> (“B1T”) is a human‑centric, Scrypt AuxPoW cryptocurrency built on the foundational 01 zero–one system. With a supply <strong>10× smaller</strong> and block times <strong>10× faster</strong> than Bitcoin, B1T proves that true decentralization—powered by real humans—still thrives. Inspired by Satoshi’s “one CPU = one vote,” we layer on the Rabbit Hole metaphor: <strong>one user = one voice</strong> and <strong>one vote = your holdings</strong>.
-      </p>
-      <p>
-        Anchored by a hard cap of <strong>2,100,000 B1T</strong>, a <strong>1‑minute block time</strong>, and five transparent halvings leading to a fees‑only issuance model, B1T aligns miner incentives, creator value, and collector demand into a <strong>self‑sustaining ecosystem</strong>. As block rewards dwindle, transaction fees secure the network—demonstrating the power of a fee‑driven economy where every transaction counts.
-      </p>
-      <p>
-        But B1T is more than code: it’s an invitation. <strong>When you hear B1T, it means YOU.</strong> Share a single B1T to welcome a friend into the Rabbit Hole, empowering them and strengthening our collective voice. It’s a living experiment in digital scarcity, speed, and shared ownership.
-      </p>
+      <p><strong>Bit</strong> (“B1T”) is a human-centric, Scrypt AuxPoW cryptocurrency built on the foundational 01 zero–one system. With a supply <strong>10× smaller</strong> and block times <strong>10× faster</strong> than Bitcoin, B1T proves that true decentralization—powered by real humans—still thrives.</p>
+
+      <p>Anchored by a hard cap of <strong>2,100,000 B1T</strong>, a <strong>1-minute block time</strong>, and five transparent halvings, B1T aligns miner incentives, creator value, and collector demand into a <strong>sustainable ecosystem</strong>.</p>
+
+      <p>But B1T is more than code: <strong>When you hear B1T, it means YOU.</strong> Sharing a single B1T brings new users into the Rabbit Hole and strengthens our collective voice.</p>
     </section>
 
-    <section id="fundamental-unit">
+    <section>
       <h3>2. Fundamental Unit “bit” / Vision</h3>
-      <p>
-        As a truly community‑driven initiative, we’re building far more than just another clone. B1T stands as a movement of resistance against where most cryptocurrencies are headed—centralization, stale conventions, and get‑rich‑quick schemes. We outright break those old schemas by hard capping total supply at 2.1 million and eliminating any infinite‑rewards model: our path is a totally different approach rooted in sustainability and genuine decentralization.
-      </p>
-      <p>
-        B1T is different: a rebellion against what crypto has become—a tool of greed, rather than a beacon of freedom and empowerment. Own B1T, share B1T: invite others to wake up and join the resistance.
-      </p>
+      <p>B1T stands as a movement against where most cryptocurrencies are headed—centralization and greed. Hard-capped at 2.1 million with no infinite rewards, B1T takes a sustainable, decentralized route.</p>
+      <p>B1T is rebellion: own B1T, share B1T, wake others up.</p>
     </section>
 
-    <section id="future">
+    <section>
       <h3>3. Against All Odds / Future</h3>
-      <p>The cornerstone of B1T’s future lies in its versatile use cases, including:</p>
+      <p>The cornerstone of B1T’s future lies in its versatile use cases:</p>
       <ul>
         <li>Micropayments</li>
         <li>Store of Value</li>
@@ -160,56 +123,41 @@
       </ul>
     </section>
 
-    <section id="rabbitals">
+    <section>
       <h3>4. Similar Things, Different Approach</h3>
-      <p>
-        B1T becomes truly unique through <strong>Rabbitals</strong>: one‑of‑a‑kind white rabbit artworks crafted by human artists. We break schemas—no layers, no predefined color palettes, no AI shortcuts. Instead, we invite creators to envision the White Rabbit through memes, culture, films like <em>Rabbit Hole</em> and <em>Follow the White Rabbit</em>, and other symbolic themes. The rule is simple: <em>one artist, one unique Rabbital</em>. These handcrafted NFTs celebrate freedom, true art, and the human spirit.
-      </p>
+      <p><strong>Rabbitals</strong> are unique white-rabbit artworks crafted by human artists. No AI, no layers, no generic palettes. One Rabbital per artist — pure human creativity and symbolism.</p>
     </section>
 
-    <section id="architecture">
+    <section>
       <h3>5. Technical Architecture</h3>
-      <p>This section will detail B1T’s underlying technology, including:</p>
       <ul>
-        <li><strong>Scrypt AuxPoW Consensus:</strong> merge‑mining mechanics</li>
-        <li><strong>Block Time:</strong> 1‑minute target</li>
-        <li><strong>Network Security:</strong> fee‑driven miner incentives and confirmation depth</li>
-        <li><strong>On‑Chain Art Support:</strong> Ordinals integration and media storage</li>
-        <li><strong>Maximum Supply:</strong> capped at 2,100,000 B1T, enforcing true digital scarcity</li>
+        <li><strong>Scrypt AuxPoW:</strong> merge-mining mechanics</li>
+        <li><strong>Block Time:</strong> 1 minute</li>
+        <li><strong>Network Security:</strong> fee-driven incentives</li>
+        <li><strong>On-Chain Art:</strong> Ordinals support</li>
+        <li><strong>Max Supply:</strong> 2,100,000 B1T</li>
       </ul>
     </section>
 
-    <section id="two-sides">
+    <section>
       <h3>6. Same Coin, Two Sides</h3>
-      <p>
-        B1T uniquely marries <strong>utility</strong> with <strong>meme culture</strong>. On one side, it offers real‑world functionality—fast transactions, programmable scarcity, and on‑chain creativity. On the other, it embraces the playful spirit of memes and community narratives. Together, these dual aspects form a balanced ecosystem where practical use cases and cultural expression reinforce each other, driving both adoption and engagement.
-      </p>
+      <p>B1T balances <strong>utility</strong> and <strong>meme culture</strong>. Fast transactions and real-world use meet creativity and community identity.</p>
     </section>
 
-    <section id="market-dynamics">
-      <h3>7. No Magic from the Magician’s Hat / Market Dynamics &amp; Decentralization</h3>
-      <p>
-        In any market, price only moves when there’s a willing buyer and seller—and with our hard cap of 2.1 million B1T, swings are to be expected. If a whale holding a large percentage of all tokens dumps, the immediate impact could push B1T down to a very low level relative to its prior value. Yet at those depressed levels, new buyers step in—and because they’re here to HODL, not flip, the price finds a firmer floor.
-      </p>
-      <p>
-        Here’s the twist: unlike other coins, B1T grows stronger the more people hold. Our “one user = one vote” ethos (mirroring “one CPU = one vote”) means every additional unique holder decentralizes supply, reduces sell‑pressure, and deepens market liquidity. The broader the base of true believers, the higher—and more stable—the price.
-      </p>
-      <p>
-        Even better: the smaller each bag (token holding) and the more diversified among many users, the less any single wallet can swing the market. In B1T’s world, distribution is power—and stability.
-      </p>
-      <p>
-        There’s no magic from a magician’s hat—just real market mechanics and real community. Less concentration, more users = healthier markets. Own a slice, share a slice—let’s build stability together.
-      </p>
-      <p>
-        B1T is designed to be traded in “50% mode” or less—meaning large one‑off trades (e.g., 1,000 B1T) aren’t wise. Don’t mimic pools or miners chasing short‑term profit; let time decide our road & dreams. Let’s break all schemas and decentralize B1T as it should be decentralized.
-      </p>
+    <section>
+      <h3>7. Market Dynamics & Decentralization</h3>
+      <p>With only 2.1 million supply, market swings are normal. But B1T becomes stronger as holders increase. <strong>One user = one vote.</strong></p>
+
+      <p>The more distributed the holdings, the less any single wallet can move the market. Decentralization becomes stability.</p>
+
+      <p>B1T should not be traded in large single chunks. Let time and distribution shape the ecosystem.</p>
     </section>
 
-    <section id="disclaimer">
+    <section>
       <h3>8. Disclaimer</h3>
-      <p>Cryptocurrencies are a high‑risk investment. Prices can be volatile and you may lose all of your investment. Do your own research (DYOR) and invest responsibly.</p>
+      <p>Cryptocurrencies are high risk. Do your own research and invest responsibly.</p>
     </section>
-    
+
   </main>
 </body>
 </html>
